@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('gitlabAnnex dashboard', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('gitlabAnnex'));
 
   describe('view1 controller', function(){
 

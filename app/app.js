@@ -1,14 +1,22 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+angular.module("gitlabAnnex", ['ui.router'])
+    .config(["$stateProvider", function ($stateProvider) {
+        $stateProvider
+            .state({
+                name: "dashboard",
+                url: "/dashboard",
+                component: "dashboard",
+                resolve: {
+                    pagesize: function(){
+                        return 10;
+                    }
+                }
+            })
+            .state({
+                name: "tester",
+                url: "/tester",
+                template: "<div> Nothing to see here, move on please</div>"
+            });
+    }]);
